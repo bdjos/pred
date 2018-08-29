@@ -4,9 +4,7 @@ import dash_html_components as html
 import pandas as pd
 
 app = dash.Dash()
-df = pd.read_csv('predictions.csv', index_col='Date/Time')
-
-
+df = pd.read_csv('pred/predictions.csv', index_col='Date/Time')
 
 app.layout = html.Div(children=[
     html.H1(children='Dash Tutorials'),
