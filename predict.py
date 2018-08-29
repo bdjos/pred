@@ -187,5 +187,9 @@ def predict():
     
     df_forecast['Predicted Demand'] = preds
     
-    return df_forecast
+    df_forecast.to_csv('predictions.csv')
+    
+if __name__ == '__main__':
+    predict()
+
 
