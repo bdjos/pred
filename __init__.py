@@ -4,7 +4,7 @@ import dash_html_components as html
 import pandas as pd
 import os
 
-PATH = os.path.abspath('predictions.csv')
+PATH = '/var/www/FlaskApp/pred/predictions.csv'
 app = dash.Dash()
 df = pd.read_csv(PATH, index_col='Date/Time')
 
