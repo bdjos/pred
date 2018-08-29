@@ -14,8 +14,10 @@ import random
 import plotly.graph_objs as go
 from collections import deque
 import predict
+import flask
 
-app = dash.Dash(__name__)
+server = flask.Flask(__name__)
+app = dash.Dash(__name__, server=server)
 
 X = deque(maxlen = 20)
 Y = deque(maxlen = 20)
@@ -48,8 +50,6 @@ def update_graph():
             )
     return {'data': [data], 'layout': go.Layout(xaxis = dict(range=[min(X), max(X)]),
                                                 yaxis = dict(range=[min(Y), max(Y)]))}
-
-server = app.server
 
 if __name__ == '__main__':
     app.run_server(debug=True)
