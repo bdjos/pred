@@ -1,8 +1,12 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import pandas as pd
 
 app = dash.Dash()
+df = pd.DataFrame({'x': [1, 2, 3, 4, 5], 'y': [10, 42, 32, 33, 34]})
+
+
 
 app.layout = html.Div(children=[
     html.H1(children='Dash Tutorials'),
@@ -10,8 +14,7 @@ app.layout = html.Div(children=[
         id='example',
         figure={
             'data': [
-                {'x': [1, 2, 3, 4, 5], 'y': [9, 6, 2, 1, 5], 'type': 'line', 'name': 'Boats'},
-                {'x': [1, 2, 3, 4, 5], 'y': [8, 7, 2, 7, 3], 'type': 'bar', 'name': 'Cars'},
+                {'x': df['x'], 'y': df['y'], 'type': 'line', 'name': 'Boats'},
             ],
             'layout': {
                 'title': 'Basic Dash Example'
