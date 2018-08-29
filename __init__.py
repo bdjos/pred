@@ -4,7 +4,7 @@ import dash_html_components as html
 import pandas as pd
 
 app = dash.Dash()
-df = pd.read_csv('predictions.csv', index_col=['Date/Time']
+df = pd.read_csv('predictions.csv', index_col=['Date/Time'])
 x = df.index
 y = df['Predicted Demand']
 
