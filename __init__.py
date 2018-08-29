@@ -5,7 +5,7 @@ import pandas as pd
 
 app = dash.Dash()
 df = pd.read_csv('predictions.csv', index_col=['Date/Time']
-x = pd.index
+x = df.index
 y = df['Predicted Demand']
 
 app.layout = html.Div(children=[
