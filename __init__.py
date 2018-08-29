@@ -4,7 +4,7 @@ import dash_html_components as html
 import pandas as pd
 
 app = dash.Dash()
-df = pd.DataFrame({'x': [1, 2, 3, 4, 5], 'y': [10, 42, 32, 33, 34]})
+df = pd.read_csv('predictions.csv', index_col='Date/Time')
 
 
 
@@ -14,7 +14,7 @@ app.layout = html.Div(children=[
         id='example',
         figure={
             'data': [
-                {'x': df['x'], 'y': df['y'], 'type': 'line', 'name': 'Boats'},
+                {'x': df.index, 'y': df['Predicted Demand'], 'type': 'line', 'name': 'Boats'},
             ],
             'layout': {
                 'title': 'Basic Dash Example'
