@@ -14,7 +14,7 @@ app.layout = html.Div(children=[
         id='example',
         figure={
             'data': [
-                {'x': x, 'y': y, 'type': 'line', 'name': 'Boats'}
+                {'x': x.values, 'y': y.values, 'type': 'line', 'name': 'Boats'}
             ],
             'layout': {
                 'title': 'Basic Dash Example'
