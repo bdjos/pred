@@ -12,12 +12,11 @@ import os
 
 db_name = 'bjos'
 table_name = 'forecast'
-host='localhost'
 
 df = predict.predict()
 print(df.columns)
 df_dtypes = ['int', 'int', 'int', 'int', 'int', 'int', 'int', 'int', 'float']
 
-db = pandasdb.pandasdb(db_name, table_name, host)
+db = pandasdb.pandasdb(db_name, table_name)
 db.pd_to_db(df_dtypes, df, if_exists='append')
 

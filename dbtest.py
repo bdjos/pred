@@ -8,9 +8,8 @@ import pandasdb
 
 db_name = 'bjos'
 table_name = 'forecast'
-host = 'localhost'
 
-db = pandasdb.pandasdb(db_name, table_name, host)
+db = pandasdb.pandasdb(db_name, table_name)
 df = db.pd_from_db()
 
 print(df)
