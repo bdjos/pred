@@ -8,9 +8,10 @@ import psycopg2
 import pandas as pd
 
 class pandasdb():
-    def __init__(self, database, table):
+    def __init__(self, database, table, host):
         self.database = database
         self.table = table
+        self.host = host
         
     def pd_to_db(self, dtypes, df, if_exists):
         if len(dtypes) != len(df.columns):
@@ -18,12 +19,12 @@ class pandasdb():
         else:
             dtypes_dict = dict(zip(list(df.columns), dtypes))
         
-            connection = psycopg2.connect(host="localhost", database="bjos", user="bjos", password="3iRM7Ihr@")
+            connection = psycopg2.connect(host=self.host, database="bjos", user="bjos", password="3iRM7Ihr@")
             df.to_sql(name = self.table, con = connection, if_exists = if_exists, dtype = dtypes_dict)
             connection.close()
         
     def pd_from_db(self):
-        connection = psycopg2.connect(host="localhost", database="bjos", user="bjos", password="3iRM7Ihr@")
+        connection = psycopg2.connect(host=self.host, database="bjos", user="bjos", password="3iRM7Ihr@")
         
         df = pd.read_sql(f'SELECT * FROM {self.table}', con = connection)
         connection.close()
