@@ -17,7 +17,7 @@ LOCATION_ID = '55488'
 FRANGE = 12
 direct = 'forecast'
 
-def get_weather(api = API, location_id = LOCATION_ID, frange = FRANGE):
+def get_weather(api = API, location_id = LOCATION_ID, frange = 12):
     
     url = f'http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/{LOCATION_ID}?apikey=%09{API}&details=True&metric=True'
     print(url)
