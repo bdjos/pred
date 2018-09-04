@@ -31,7 +31,7 @@ app.layout = html.Div(children=[
         id='example',
         figure={
             'data': [
-                {'x': df['Date/Time'], 'y': ['Predicted Demand'], 'type': 'line', 'name': 'Boats'}
+                {'x': df['Date/Time'], 'y': df['Predicted Demand'], 'type': 'line', 'name': 'Boats'}
             ],
             'layout': {
                 'title': 'Basic Dash Example'
