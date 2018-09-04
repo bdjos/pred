@@ -16,8 +16,6 @@ plotly.tools.set_credentials_file(username=uname, api_key=apikey)
 db = pandasdb.pandasdb(db_name, table_name)
 df = db.pd_from_db()
 
-ply.sign_in(uname, api_key)
-
 app.layout = html.Div(children=[
     html.H1(children='Ontario Demand Prediction'),
     dcc.Graph(
