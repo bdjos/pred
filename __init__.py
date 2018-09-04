@@ -6,15 +6,15 @@ import pandas as pd
 import os
 import pandasdb
 
-db_name = 'bjos'
-table_name = 'forecast2'
+#db_name = 'bjos'
+#table_name = 'forecast2'
 #uname = 'bjos'
 #apikey = 'xkic7PUmF2h6l4lVKo9c'
 #
 #plotly.tools.set_credentials_file(username=uname, api_key=apikey)
 
-db = pandasdb.pandasdb(db_name, table_name)
-df = db.pd_from_db()
+#db = pandasdb.pandasdb(db_name, table_name)
+#df = db.pd_from_db()
 
 app = dash.Dash()
 
