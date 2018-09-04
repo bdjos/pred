@@ -6,7 +6,7 @@ import os
 import pandasdb
 
 db_name = 'bjos'
-table_name = 'forecast'
+table_name = 'forecast2'
 
 db = pandasdb.pandasdb(db_name, table_name)
 df = db.pd_from_db()
