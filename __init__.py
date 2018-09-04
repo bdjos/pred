@@ -11,6 +11,8 @@ table_name = 'forecast2'
 db = pandasdb.pandasdb(db_name, table_name)
 df = db.pd_from_db()
 
+app = dash.Dash()
+
 app.layout = html.Div(children=[
     html.H1(children='Ontario Demand Prediction'),
     dcc.Graph(
