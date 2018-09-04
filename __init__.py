@@ -13,6 +13,9 @@ df = db.pd_from_db()
 
 app = dash.Dash()
 
+print(df['Date/Time'])
+print(df['Predicted Demand'])
+
 app.layout = html.Div(children=[
     html.H1(children='Ontario Demand Prediction'),
     dcc.Graph(
