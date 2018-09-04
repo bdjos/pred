@@ -1,4 +1,4 @@
-import plotly
+import plotly as ply
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -15,6 +15,8 @@ plotly.tools.set_credentials_file(username=uname, api_key=apikey)
 
 db = pandasdb.pandasdb(db_name, table_name)
 df = db.pd_from_db()
+
+app = dash.Dash()
 
 app.layout = html.Div(children=[
     html.H1(children='Ontario Demand Prediction'),
