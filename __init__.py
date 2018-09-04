@@ -19,12 +19,13 @@ df = db.pd_from_db()
 app = dash.Dash()
 
 app.layout = html.Div(children=[
-    html.H1(children='Ontario Demand Prediction'),
+    html.H1(children='Dash Tutorials'),
     dcc.Graph(
         id='example',
         figure={
             'data': [
-                {'x': df['Date/Time'], 'y': df['Predicted Demand'], 'type': 'line', 'name': 'Predicted Demand'}
+                {'x': [1, 2, 3, 4, 5], 'y': [9, 6, 2, 1, 5], 'type': 'line', 'name': 'Boats'},
+                {'x': [1, 2, 3, 4, 5], 'y': [8, 7, 2, 7, 3], 'type': 'bar', 'name': 'Cars'},
             ],
             'layout': {
                 'title': 'Basic Dash Example'
@@ -36,5 +37,4 @@ app.layout = html.Div(children=[
 server = app.server
 
 if __name__ == '__main__':
-    print(df['Date/Time'])
-    print(df['Predicted Demand'])
+    app.run_server(debug=True)
