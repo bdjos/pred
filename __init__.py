@@ -1,3 +1,4 @@
+import plotly
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -7,14 +8,15 @@ import pandasdb
 
 db_name = 'bjos'
 table_name = 'forecast2'
+uname = 'bjos'
+apikey = 'xkic7PUmF2h6l4lVKo9c'
+
+plotly.tools.set_credentials_file(username=uname, api_key=apikey)
 
 db = pandasdb.pandasdb(db_name, table_name)
 df = db.pd_from_db()
 
-app = dash.Dash()
-
-print(df['Date/Time'])
-print(df['Predicted Demand'])
+ply.sign_in(uname, api_key)
 
 app.layout = html.Div(children=[
     html.H1(children='Ontario Demand Prediction'),
